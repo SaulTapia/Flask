@@ -1,9 +1,9 @@
 from flask import render_template, redirect, url_for, flash, session
 from flask_login import login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from app.forms import LoginForm
-from app.models import User
-from app.queries import get_user
+from app_assets.forms import LoginForm
+from app_assets.models import User
+from app_assets.queries import get_user
 from cfg import sqlsessionclass, db
 from . import auth
 
