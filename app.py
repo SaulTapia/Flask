@@ -7,6 +7,9 @@ from app_assets.forms import TodoForm, DeleteTodoForm, UpdateTodoForm
 from app_assets.queries import get_todos, get_user
 from app_assets.models import Todo
 
+@app.cli.command()
+def create_tables():
+    db.create_all()
 
 @app.cli.command()
 def test():
