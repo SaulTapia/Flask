@@ -1,0 +1,15 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+{% macro render_todo(todo, delete_form, update_form) %}
+    <li class="list-group-item">
+        {% if todo.is_done %}
+            <span class="badge">Finalizada!</span>
+        {% else %}
+            <span class="badge">Pendiente</span>
+        {% endif %}
+        {{ todo.content }}
+        <div>
+            {{ wtf.quick_form(delete_form, action=url_for('delete', todo_id=todo.id)) }}
+            {{ wtf.quick_form(update_form, action=url_for('update', todo_id=todo.id)) }}
+        </div>
+    </li>
+{% endmacro %}

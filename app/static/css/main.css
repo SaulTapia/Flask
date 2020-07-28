@@ -1,0 +1,10 @@
+body {
+    font-family: Helvetica;
+}
+.titulo-container {
+    background-color: gainsboro;
+}
+.titulo {
+    display: flex;
+    justify-content: center;
+}
