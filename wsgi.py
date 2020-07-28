@@ -1,3 +1,3 @@
-from app import create_app
+from cfg import app
 
-app = create_app
+app = app
