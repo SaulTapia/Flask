@@ -8,3 +8,19 @@ body {
     display: flex;
     justify-content: center;
 }
+.title-block {
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content: center;
+}
+.btns-container {
+    display: flex;
+    justify-content: space-around;
+}
+.btn-container {
+    background-color: red;
+}
+.empty-space {
+    width: 100%;
+    min-height: 100px;
+}

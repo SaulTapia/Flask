@@ -7,9 +7,9 @@
             <span class="badge">Pendiente</span>
         {% endif %}
         {{ todo.content }}
-        <div>
+        <div class="btns-container">
             {{ wtf.quick_form(delete_form, action=url_for('delete', todo_id=todo.id)) }}
-            {{ wtf.quick_form(update_form, action=url_for('update', todo_id=todo.id)) }}
+            {{ wtf.quick_form(update_form, action=url_for('update', todo_id=todo.id))}}
         </div>
     </li>
 {% endmacro %}

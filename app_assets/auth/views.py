@@ -64,7 +64,7 @@ def signup():
             sqlsession.commit()
             login_user(user)
 
-            flash('Bienvenido!')
+            flash('Bienvenido!', 'alert alert-success alert-dismissible')
 
             return redirect(url_for('hello'))
             
@@ -75,6 +75,6 @@ def signup():
 @login_required
 def logout():
     logout_user()
-    flash('Adios!')
+    flash('Adios!', 'alert alert-success alert-dismissible')
 
     return redirect(url_for('auth.login'))
