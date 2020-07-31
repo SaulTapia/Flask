@@ -68,17 +68,20 @@ def hello():
 @login_required
 def delete(todo_id):
     user_id = current_user.id
-    todo = Todo.query.filter(Todo.user_id==user_id).first()
-    db.session.delete(todo)
-    db.session.commit()
+    todo = Todo.query.filter(Todo.id==todo_id).first()
+    if todo.user_id == user_id:
+        db.session.delete(todo)
+        db.session.commit()
+
     return redirect(url_for('hello'))
 
 @app.route('/todos/update/<todo_id>/', methods=['POST'])
 def update(todo_id):
     user_id = current_user.id
-    todo = Todo.query.filter(Todo.user_id==user_id).first()
-    todo.is_done = (todo.is_done + 1) % 2
-    db.session.commit()
+    todo = Todo.query.filter(Todo.id==todo_id).first()
+    if user_id == todo.user_id:  
+        todo.is_done = (todo.is_done + 1) % 2
+        db.session.commit()
 
     return redirect(url_for('hello'))
 
