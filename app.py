@@ -86,4 +86,4 @@ def update(todo_id):
     return redirect(url_for('hello'))
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False)
